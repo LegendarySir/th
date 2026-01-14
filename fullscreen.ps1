@@ -1,0 +1,1 @@
+Add-Type -AssemblyName PresentationFramework;[System.Windows.Forms.Screen]::AllScreens | %{$w=New-Object Windows.Window;$w.WindowStyle='None';$w.ResizeMode='NoResize';$w.Topmost=$true;$w.Left=$_.Bounds.Left;$w.Top=$_.Bounds.Top;$w.Width=$_.Bounds.Width;$w.Height=$_.Bounds.Height;$w.Background='Red';$w.Show()};[System.Windows.Threading.Dispatcher]::Run()
